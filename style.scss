@@ -12,6 +12,16 @@
 // }
 
 @import url('https://fonts.googleapis.com/css?family=Raleway|Ubuntu:400,700&display=swap');
+@mixin animation($delay) {
+    animation-name: fallOpacity;
+    animation-duration: 2s;
+    animation-delay: $delay;
+    animation-timing-function: cubic-bezier(1, 1, 1, 1);    
+}
+
+* {
+    @include animation(0);
+}
 
 html, 
 body {
@@ -26,9 +36,15 @@ body {
     grid-template-rows: repeat(12, 1fr);
 }
 img {
+    @include animation(0.9s);
     margin: 1.66%;
     width: 30%;
     float: left;
+
+    &:hover {
+        transform: translateY(-10px);
+        transition: all 0.6s ease-in;
+    }
 }
 
 figure {
@@ -52,4 +68,23 @@ footer {
     padding: 15px;
     grid-row: -1;
     grid-column: 1 / -1;
+}
+
+@keyframes fallOpacity {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    50% {
+        opacity: 0.3;
+        transform: translateY(-10px);
+    }
+    75% {
+        opacity: 0.5;
+        transform: translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
