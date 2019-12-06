@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway|Ubuntu:400,700&display=swap");
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  margin: 0 auto;
+  padding: 0;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  -ms-grid-rows: (1fr)[12];
+      grid-template-rows: repeat(12, 1fr);
+}
+
+img {
+  margin: 1.66%;
+  width: 30%;
+  float: left;
+}
+
+figure {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  grid-column: 1 / -1;
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  margin-left: 1.66%;
+  font-size: 2em;
+  text-transform: uppercase;
+  border-bottom: 2px solid #f1f1f1;
+  width: 30%;
+  padding-bottom: 20px;
+}
+
+footer {
+  background: #f1f1f1;
+  text-align: center;
+  padding: 15px;
+  grid-row: -1;
+  grid-column: 1 / -1;
+}
+/*# sourceMappingURL=style.css.map */
